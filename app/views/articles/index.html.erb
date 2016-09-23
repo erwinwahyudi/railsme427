@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="page-header">Listing Articles</h1>
+<br>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.body %></td>
+        <td>
+          <div class="btn-group" role="group">
+            &nbsp; <%= link_to 'Show', article, class: 'btn btn-default btn-sm' %>
+            &nbsp; <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning btn-sm' %>
+            &nbsp; <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
+
+<script type="text/javascript">
+  $('pill_articles').addClass('active');
+</script>
