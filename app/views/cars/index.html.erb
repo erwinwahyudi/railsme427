@@ -2,8 +2,7 @@
 
 <h1>Daftar Mobil</h1>
 
-<%= link_to 'Masukkan Data', '/cars/form_insert' %>
-
+<%= link_to 'Masukkan Data', adm_cars_form_insert_path %>
 
 <table border="1">
 	<thead>
@@ -20,7 +19,7 @@
 			<td> <%= car.brand %> </td>
 			<td> <%= car.description %> </td>
 			<td> <%= car.harga %> </td>
-			<td> <%= link_to 'Edit', '/cars/form_update/'+car.id.to_s %> </td>
+			<td> <%= link_to 'Edit', 'cars/form_update/'+car.id.to_s %> </td>
 			<td> <%= link_to 'Hapus', 'cars/hapus/'+car.id.to_s, method: :delete, data: {confirm: 'Apakah yakin ingin menghapus?' } %> </td>
 		</tr>
 		<% end %>

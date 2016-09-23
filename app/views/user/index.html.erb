@@ -1,0 +1,42 @@
+<p id="notice"> <%= notice %> </p>
+
+<h1 class="page-header">List User</h1>
+<br>
+
+<%= link_to 'Tambah User', adm_user_form_insert_path, class: 'btn btn-success' %> <br><br>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Panel title</h3>
+	</div>
+	<div class="panel-body">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Nama</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% 
+					no = 0
+					@users.each do |user| 
+				%>
+				<tr>
+					<td> <%= no+=1 %> </td>
+					<td> <%= user.nama %> </td>
+					<td> <%= user.username %> </td>
+					<td> <%= user.email %> </td>
+					<td>
+						<%= link_to 'Edit', 'form_edit/'+user.id.to_s, class: 'btn btn-primary' %>
+						<%= link_to 'Hapus','hapus/'+user.id.to_s, class: 'btn btn-danger', method: :delete, data: {confirm: 'Apakah yakin ingin menghapus?' } %>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

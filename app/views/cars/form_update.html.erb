@@ -1,7 +1,15 @@
 <h1>Edit</h1>
 
-<%= link_to 'Kembali', '/cars' %>
+<%= link_to 'Kembali', adm_cars_path %>
 
-<%= form_for(@car, :url => '/cars/update_data') do %>
+<!-- 
+adm_cars_update_data_path	PATCH	/adm/cars/update_data(.:format)	cars#update_data
+adm adalah layout yg dipakai
+cars adalah controller yg dituju
+update data adalah method yg dituju
+path adalah default dari rails 
+-->
+
+<%= form_for(@car, :url => adm_cars_update_data_path) do %>
 	<%= render partial: "form", locals: { car: @car } %>
 <% end %>

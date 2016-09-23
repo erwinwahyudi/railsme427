@@ -28,7 +28,7 @@
 	</section>
 	
 	<section class="col-lg-9">
-		<%= yield %>
+		
 	</section>
 </section> -->
 
@@ -66,7 +66,8 @@
 	    	<div class="col-sm-3 col-md-2 sidebar">
 	          <ul class="nav nav-sidebar">
 	            <li class="active"> <%= link_to 'Artikel', articles_path %> </li>
-	            <li> <%= link_to 'Cars', controller: 'cars', action: 'index' %> </li>
+	            <li> <%= link_to 'Cars', adm_cars_path %> </li>
+	            <li> <%= link_to 'Users', adm_user_index_path %> </li>
 	          </ul>
 	        </div>
 

@@ -58,6 +58,23 @@ Rails.application.routes.draw do
   #  menjadi localhost:3000/adm/articles
   resources :articles, path: 'adm/articles' #route dg RESTfull
   
+  ############   route untuk user  ############
+
+  get 'adm/user/index', to: 'user#index'
+
+  get 'adm/user/show/:id', to: 'user#show'
+
+  get 'adm/user/form_insert', to: 'user#form_insert'
+  post 'adm/user/insert_data', to: 'user#insert_data'
+
+  get 'adm/user/form_edit/:id', to: 'user#form_edit'
+  patch 'adm/user/edit_data/:id', to: 'user#edit_data'
+
+  delete 'adm/user/hapus/:id', to: 'user#hapus'
+
+  ############   akhir route untuk user  ############  
+
+  
 
   get 'adm/cars', to: 'cars#index'
   get 'adm/cars/form_insert', to: 'cars#form_insert'

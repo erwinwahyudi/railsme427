@@ -1,7 +1,7 @@
 <h1>Data Baru</h1>
 
-<%= link_to 'Kembali', '/cars' %>
+<%= link_to 'Kembali', adm_cars_path %>
 	
-<%= form_for(@car, :url => '/cars/insert_data') do %>
+<%= form_for(@car, :url => adm_cars_insert_data_path ) do %>
 	<%= render partial: "form", locals: { car:@car } %>
 <% end %>
